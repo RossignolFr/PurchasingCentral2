@@ -28,6 +28,7 @@ public class DBMgr_products {
             while(res.next()){
                 PC_products prod = new PC_products();
                 System.out.print("resultat req :"+res.getString("PRODUCT_REF"));
+                System.out.print("resultat req :"+res.getString("PRODUCT_LOT"));
                 //Get data from the row
                 prod.setProductId(res.getInt("PRODUCT_ID"));
                 prod.setProductStatutId(res.getInt("PRODUCT_STATUT_ID"));
@@ -35,6 +36,8 @@ public class DBMgr_products {
                 prod.setProductLot(res.getString("PRODUCT_LOT"));
                 prod.setProductUid(res.getString("PRODUCT_UID"));
                 prod.setProductPrice(res.getDouble("PRODUCT_PRICE"));
+                
+                System.out.print("produit lot :"+prod.getProductLot());
                 products.add(prod);
             }
             

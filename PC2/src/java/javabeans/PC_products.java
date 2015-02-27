@@ -61,7 +61,7 @@ public class PC_products implements Serializable {
     }
     public void setProductLot(String value){
         String old = product_lot;
-        product_lot = old;
+        product_lot = value;
         propertySupport.firePropertyChange(PRODUCT_LOT,old,product_lot);
     }
     
