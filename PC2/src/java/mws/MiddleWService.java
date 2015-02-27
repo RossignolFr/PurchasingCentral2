@@ -46,7 +46,8 @@ public class MiddleWService {
         DBMgr_products dbmgr_products = new DBMgr_products();
         ArrayList<PC_products> list_prod = dbmgr_products.getAllProducts();
         WSPurchasingCentralResponse response = new WSPurchasingCentralResponse(0, "tout va bien", list_prod);
-        throw new UnsupportedOperationException();
+        //throw new UnsupportedOperationException();
+        return response;
     }
 
     /**

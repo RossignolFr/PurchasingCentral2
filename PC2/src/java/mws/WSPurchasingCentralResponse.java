@@ -8,17 +8,18 @@ package mws;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import javabeans.PC_products;
 /**
  *
  * @author Bertrand
  */
 public class WSPurchasingCentralResponse implements Serializable {
     
-    private String message; 
-    private int errorcode; 
-    private ArrayList produits;
+    public int errorcode; 
+    public String message; 
+    public ArrayList<PC_products> produits;
     
-    public WSPurchasingCentralResponse(int newerrorcode, String newmessage, ArrayList hello){
+    public WSPurchasingCentralResponse(int newerrorcode, String newmessage, ArrayList<PC_products> hello){
         this.message = newmessage; 
         this.errorcode = newerrorcode; 
         this.produits = hello; 

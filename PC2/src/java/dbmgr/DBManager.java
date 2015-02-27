@@ -17,7 +17,6 @@ import java.sql.ResultSet;
 
 public class DBManager {
     
-    private Connection connection;
     
     
     public DBManager() {
@@ -26,22 +25,22 @@ public class DBManager {
     
     
     
-    private Boolean Connection(){
+    public Connection Connection(){
         try{
             Class.forName("org.apache.derby.jdbc.ClientDriver");
-            connection = DriverManager.getConnection(
+            
+            return DriverManager.getConnection(
                     "jdbc:derby://195.83.139.59:6027/sample4","app","app");
-            return true;
             
         }
         catch(Exception e){
             e.printStackTrace();
-            return false;
+            return null;
         }
         
     }
     
-    private Boolean Close(){
+    public Boolean Close(Connection connection){
         try{
             if(!(connection.isClosed())){
                 connection.close();
@@ -53,20 +52,9 @@ public class DBManager {
             e.printStackTrace();
             return false;
         }}
-    public ResultSet executeQuery(String query){
-        ResultSet result = null;
-        try{
-            this.Connection();
-            result = connection.createStatement().executeQuery(query);
-            this.Close();
-            return result;
-        }
-        catch(Exception e){
-            e.printStackTrace();
-            return null;
-        }
+   
         
     }
     
     
-}
+
