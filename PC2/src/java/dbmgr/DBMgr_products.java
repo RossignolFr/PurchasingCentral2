@@ -18,7 +18,7 @@ public class DBMgr_products {
     
     private DBManager db = new DBManager();
     
-    public List<PC_products> getAllProducts(){
+    public ArrayList<PC_products> getAllProducts(){
         ArrayList<PC_products> products = new ArrayList<PC_products>();
         String query = "SELECT * FROM APP.PC_PRODUCTS";
         try{
